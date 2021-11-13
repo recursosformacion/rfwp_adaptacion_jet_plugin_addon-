@@ -1,6 +1,19 @@
-## Available Filters
-- **post_url_by_id** - get the Post URL by Post ID
-- **post_title_by_id** - get the Post Title by Post ID
-- **render_fa_icon** - get a Font Awesome icon classes
+# rfwp_adaptacion_jet_plugin_addon
 
-Usage example: **key_name|filter_name** http://prntscr.com/qwsmzx
+Modificacion del plugin  JetPlugins Dynamic Data Addon de Crocoblock
+Para acceder a una lista de imagenes propias.
+
+En base.php se ha añadido la opcion
+'rf_array'  =>__( 'RF lista', 'jet-elements-dynamic-data' ),
+y, en caso de que se solicite, se invoca a una funcion propiascase 'rf_array':
+				$pproyecto = isset($_GET['proyecto']) ? esc_attr(esc_html($_GET['proyecto'])) : 0;
+				$new_loop =  rf_get_fotos_proyecto($pproyecto);
+				break;
+que facilita una lista de fotos con la estructura 
+ $resultado[] = [
+                    'id' => $page->imgIdWordpress,
+                    'url' => $page->imgUrl,
+                ];
+
+Ha sido necesario implementar el id de la imagen para Wordpress
+
