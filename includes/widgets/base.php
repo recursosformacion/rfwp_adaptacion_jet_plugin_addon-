@@ -70,8 +70,8 @@ abstract class Jet_Elements_Dynamic_Data_Base {
 				break;
 
 			case 'rf_array':
-				$pproyecto = isset($_GET['proyecto']) ? esc_attr(esc_html($_GET['proyecto'])) : 0;
-				$new_loop =  rf_get_fotos_proyecto($pproyecto);
+				
+				$new_loop =  rf_get_fotos_proyecto();
 				break;
 
 
@@ -109,7 +109,7 @@ abstract class Jet_Elements_Dynamic_Data_Base {
 			);
 		}
 
-$conta=0;
+
 		foreach ( $new_loop as $inx => $loop_item ) {
 
 			$new_item = array(
